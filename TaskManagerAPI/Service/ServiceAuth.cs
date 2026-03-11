@@ -58,7 +58,7 @@ namespace TaskManagerAPI.Service
         private string GenerarToken(UsersEntity usuario)
         {
             var jwtConfig = _configuration.GetSection("jwt");
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtConfig.Key));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtConfig["Key"]!));
 
             var claims = new[]
             {
